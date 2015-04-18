@@ -1,3 +1,27 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  padding-left:25px;
+ }
+
+#store-teaser {
+  color:#191970;
+  font-family: Futura;
+  padding-top:30px;
+  padding-bottom:30px;
+  text-decoration:underline;
+ }
+
+table {
+  width:800px;
+  color:#191970;
+  font-family: Futura;
+
+
+}
+
+th {  
+  font-size: 1.5em; 
+  }
