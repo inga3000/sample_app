@@ -1,3 +1,23 @@
 == README
 
 This app was built by Inga as part of CareerFoundry online course.
+
+git is basically a set of 3 local buckets
+
+1) working 
+2) stage or index
+3) commit
+
+when you change a file it is put in the working bucket/tree
+when you "add" a file with "git add <file>" it is transferred to stage/index
+when you do a commit with "git commit" all the files in stage/index are committed into
+  commit bucket.
+
+git gui
+gitk                  # this one shows only your local branch 
+gitk --all            # this one shows your remote branches too
+
+git push <name_of_the_remote_repository> <name_of_branch>
+
+# how do you get the names of your remote branches?
+git remote -v
