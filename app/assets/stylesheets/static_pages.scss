@@ -2,16 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 h1 {
-  color:#1E90FF;
+  color:#00BFFF;
   font-family: Impact, sans-serif;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-align: center;
 }
 
 h2 {
 	
-  color:#DC143C;
+  color:#FFD700;
   font-family: Impact, sans-serif;
   letter-spacing: 0.05em;
+   text-align: center;
 }
+
+.carousel-caption {
+	font-size: 4em;
+	font-weight: 800;
+	letter-spacing: 0.01em;
+	color: white;
+	padding-bottom: 180px;
+}
+
+
+header {
+  background: -webkit-linear-gradient(#FF1493, #0000FF); 
+  background: -o-linear-gradient(#FF1493, #6495ED); 
+  background: -moz-linear-gradient(#FF1493, #6495ED); 
+  background: linear-gradient(#FF1493, #6495ED); 
+  border: 6px groove #C71585;
+  }
+
+  #teaser {
+
+padding: 10px;
+margin: 0 auto;
+display: block;
+
+
+  }
