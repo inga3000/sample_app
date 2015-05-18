@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleApp</title>
+  <title>The Shop</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
@@ -13,14 +16,40 @@
 </head>
 <body>
 
-<header> 
+<nav class="navbar" role="navigation">
 
-<h1> Welcome to the Mall </h1>
-<h2> Your source for really cool 2nd hand findings </h2>
+    <div class="container-fluid carousel">
 
-</header>
+      <div class="navbar-header">
 
-<img id="teaser" src="/images/shop.jpg" alt="featuredproduct">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+
+          <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-left">
+
+              <li class="navbar-nav"><%= link_to "Home", root_path %> </a> </li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+
+              <li> <%= link_to "Products", products_path %></a></li>
+              <li> <%= link_to "Shopping Card", orders_path %> </a></li>
+              <li> <%= link_to "About", static_pages_about_path %> </a> </li>
+
+            </ul>
+
+          </div> <!-- end navbar-collapse-->
+
+      </div> <!-- end navbar header -->
+
+    </div> <!-- end nav container -->
 
 <%= yield %>
 

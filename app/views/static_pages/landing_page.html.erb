@@ -1,5 +1,12 @@
-<%= @featured_product.name %>
+  <!-- <%= @featured_product.name %> -->
 
+  <header> 
+
+<h2> It's a Store. </h1>
+
+</header>
+
+ <div class="col-md-6 col-md-offset-3 col-xs-12" id="row">
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
@@ -12,8 +19,8 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <% @products.each do |product| %>
-  <div class="item<%= " active" if product == @products.first %>">
-      <%= image_tag(product.image_url) %>
+  <div class="item<%= " active" if product == @products.first %>" >
+      <%= link_to image_tag(product.image_url, :alt => product.name), {:controller => 'products', :action => 'show', id:product} %> 
       <div class="carousel-caption">
         <%= product.name %>
       </div>
@@ -31,4 +38,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+</div>
+
+</div>
+
+
 

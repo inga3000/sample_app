@@ -21,3 +21,40 @@ git push <name_of_the_remote_repository> <name_of_branch>
 
 # how do you get the names of your remote branches?
 git remote -v
+
+rake db:migrate does the following things:
+1. takes all the timestamps from the migration files and 
+   for each one tries to locate it inside the table "schema_migrations"
+   The table "schema_migrations" holds the list of migration timestamps
+   that have been applied to the database.
+   So, if a timestamp from the migration files does not exist in the 
+   table "schema_migrations", then the command "rake db:migreate" will
+   execute the migration in the corresponding file and will insert the
+   timestamp of the file in the talbe "schema_migrations".
+
+   "schema_migrations" 
+   | 20150415203701 |
+   | 20150423175742 |
+   | 2015....       |
+
+  5 rows for your project.
+
+ 2. If you go back to your code and change a migration, it's content,
+ then this new version of this migration will not be applied. 
+   rake db:migrate will ignore the changed migration and will not apply it
+   because it's timestamp will already be inside table "schema_migrations"
+
+ 3. rake db:rollback
+    reads the content of the last migration applied. The last migration
+    applied is the last order inside table "schema_migrations" ("schema_migrations" table orders its contents by timestamp - actually
+     it is rake db:rollback that does that when it processes the contents
+     of this table).
+     Executes the "down" part of the migration or the "reverse of change" part.  
+    After rake db:rollback executes the commands that correspond to
+    the last migration, it removes the timestamp from the "schema_migrations" table.
+
+    Inspect Production Area: sqlite3 db/development.sqlite3  
+
+    heroku pg:psql
+    \dt
+    \d products;

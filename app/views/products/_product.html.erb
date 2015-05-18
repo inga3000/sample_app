@@ -1,10 +1,11 @@
-      <tr>
-        <td><%= product.name %></td>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+
+    <tr>
+        <td><img src="<%= product.image_url %>" class="img-responsive"></td>
         <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
-        <td><%= product.colour %></td>
         <td><%= product.price %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    </tr>
+

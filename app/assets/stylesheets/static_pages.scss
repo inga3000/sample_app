@@ -3,44 +3,51 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-h1 {
-  color:#00BFFF;
-  font-family: Impact, sans-serif;
-  letter-spacing: 0.05em;
+.navbar-header {
+  width:100%;
+  font-family: Roboto Condensed, Impact, sans-serif;
+  font-weight: 300;
+}
+
+.nav li {
   text-transform: uppercase;
-  text-align: center;
+  font-weight: 400;
 }
 
 h2 {
-	
-  color:#FFD700;
-  font-family: Impact, sans-serif;
-  letter-spacing: 0.05em;
-   text-align: center;
+  color:#C71585;
+  text-align: center;
+  font-family: Roboto Condensed, Impact, sans-serif;
+  font-weight: 300;
 }
 
-.carousel-caption {
-	font-size: 4em;
-	font-weight: 800;
-	letter-spacing: 0.01em;
-	color: white;
-	padding-bottom: 180px;
+.right.carousel-control, .left.carousel-control {
+    opacity: 0;
+    filter:alpha(opacity=0); /* IE support */
 }
 
+.glyphicon {
+  color: black;
+}
 
-header {
-  background: -webkit-linear-gradient(#FF1493, #0000FF); 
-  background: -o-linear-gradient(#FF1493, #6495ED); 
-  background: -moz-linear-gradient(#FF1493, #6495ED); 
-  background: linear-gradient(#FF1493, #6495ED); 
-  border: 6px groove #C71585;
-  }
+#row {
+  margin-top: 50px;
+  height: 550px;
+  border: solid red;
+}
 
-  #teaser {
+#carousel-example-generic {
+  margin-top: 50px;
+}
 
-padding: 10px;
-margin: 0 auto;
-display: block;
+.item{
+  height: 500px;
+}
 
-
-  }
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    height: auto;
+    line-height: 1;
+    margin: 0 auto;
+    max-width: 100%;
+}
