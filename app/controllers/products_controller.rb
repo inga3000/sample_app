@@ -6,6 +6,12 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     render layout: "products"
+    if params[:q]
+      search_term = params[:q]
+      @products = Product.where("name LIKE ?", "%#{search_term}%")
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/1

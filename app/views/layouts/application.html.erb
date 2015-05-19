@@ -42,6 +42,12 @@
               <li> <%= link_to "Products", products_path %></a></li>
               <li> <%= link_to "Shopping Card", orders_path %> </a></li>
               <li> <%= link_to "About", static_pages_about_path %> </a> </li>
+              <li> <a>
+                <%= form_tag("/products", method: "get") do %>
+                <%= text_field_tag(:q) %>
+                <%= submit_tag("Search") %>
+                <% end %>
+              </a></li>
 
             </ul>
 
