@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <title>The Shop</title>
 
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
@@ -42,13 +43,10 @@
               <li> <%= link_to "Products", products_path %></a></li>
               <li> <%= link_to "Shopping Card", orders_path %> </a></li>
               <li> <%= link_to "About", static_pages_about_path %> </a> </li>
-              <li> <a>
+            <ul class="navbar-form navbar-right">
                 <%= form_tag("/products", method: "get") do %>
-                <%= text_field_tag(:q) %>
-                <%= submit_tag("Search") %>
+                <%= text_field_tag  (:q) %>
                 <% end %>
-              </a></li>
-
             </ul>
 
           </div> <!-- end navbar-collapse-->
@@ -60,4 +58,5 @@
 <%= yield %>
 
 </body>
+
 </html>
