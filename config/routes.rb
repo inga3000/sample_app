@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:index, :show, :new, :create]
 
+  post 'static_pages/thank_you'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
