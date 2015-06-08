@@ -1,5 +1,7 @@
-  <!-- <%= @featured_product.name %> -->
-
+  <% if @featured_product.present? %>
+    <%= @featured_product.name %> 
+  <% end %>
+  
   <header> 
 
 <h2> It's a Store. </h1>
