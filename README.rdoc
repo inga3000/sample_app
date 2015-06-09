@@ -58,3 +58,8 @@ rake db:migrate does the following things:
     heroku pg:psql
     \dt
     \d products;
+
+    select * from schema_migrations;
+delete from schema_migrations where version = '20150530112625';
+
+rake db:migrate:status

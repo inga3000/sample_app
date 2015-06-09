@@ -33,7 +33,19 @@
 
             <ul class="nav navbar-nav navbar-left">
 
-              <li class="navbar-nav"><%= link_to "Home", root_path %> </a> </li>
+              <li class="navbar-nav">
+
+              <%= link_to "Home", root_path %> 
+
+              <% if user_signed_in? %>
+                <li>
+                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+                </li>
+              <% else %>
+                <li>
+                <%= link_to('Login', new_user_session_path)  %>  
+                </li>
+              <% end %>
 
             </ul>
 
@@ -53,6 +65,9 @@
       </div> <!-- end navbar header -->
 
     </div> <!-- end nav container -->
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
