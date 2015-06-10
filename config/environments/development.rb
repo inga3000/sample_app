@@ -39,6 +39,7 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+<<<<<<< HEAD
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.action_mailer.raise_delivery_errors = true
@@ -47,4 +48,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {:address => '127.0.0.1', :port => 1025} # the mailcatcher # http://mailcatcher.me/
   config.action_mailer.asset_host = 'http://localhost:3000'
 
+=======
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' } 
+  
+>>>>>>> authentication
 end
