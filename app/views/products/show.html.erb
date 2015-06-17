@@ -1,3 +1,5 @@
+<div class="container">
+
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -22,5 +24,21 @@
   <%= @product.price %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<p>
+  <strong>Average Rating:</strong>
+  <div class="rated" data-score="<%= @product.average_rating %>"></div>
+</p>
+<br>
+<p>   
+  <%= render 'new_comment' %> 
+</p>
+
+<p>   
+  <%= render 'comments' %> 
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %>
 <%= link_to 'Back', url_for(:back) %>
+
+</div>
+
