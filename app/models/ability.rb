@@ -6,6 +6,7 @@ class Ability
     can :manage, User, id: user.id
     if user && user.admin?
       can [:update,:destroy], :all
-  end
+    end
+ end
 
 end
