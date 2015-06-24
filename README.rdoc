@@ -63,3 +63,6 @@ rake db:migrate does the following things:
 delete from schema_migrations where version = '20150530112625';
 
 rake db:migrate:status
+
+rake routes (list all routes)
+
