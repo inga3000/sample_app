@@ -37,9 +37,9 @@ describe Product do
     context 'when we have comments with rating' do
       before do
         # test setup. I am preparing the context of the actual test
-        user = build(:user)
+        user = create(:user)
         @product = create(:product_with_comments)
-        # @product.comments << Comment.new(5.times { FactoryGirl.build(:comment, user)}) #Need some help with this!
+        # @product.comments << Comment.new(5.times { FactoryGirl.build(:comment, user)}) 
       end  
 
       it 'should give the correct average' do
