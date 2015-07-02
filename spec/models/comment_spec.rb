@@ -71,18 +71,19 @@ describe Comment do
 		context 'when is no integer' do
 
 			before do
-				@comment = build(:comment, rating: "d")
-        expect(@comment.rating).to_not match(/\d+/)
+
+				subject.rating = 'a'
+
+        expect(subject.rating).to_not match(/\d+/)
 			end
 
 			it 'should be invalid' do
         # fire
-        @comment.valid?
+        subject.valid?
 
         # check that the test gives the result that we want
-				expect(@comment.errors[:rating]).to include("is not a number")
+				expect(subject.errors[:rating]).to include("is not a number")
 			end
-
     end
 
     context 'when is missing' do

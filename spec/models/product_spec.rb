@@ -18,16 +18,18 @@ describe Product do
 
     context 'when is present' do 
       before do 
-        @product = build(:product)
-        expect(@product.name).to be_present
+
+        subject.name = "Apple iPhone 6"
+
+        expect(subject.name).to be_present
       end
 
       it 'should be valid with a name' do
         # fire
-        @product.valid?
+        subject.valid?
 
         # check that the test gives the result that we want
-        expect(@product.errors[:name]).to be_blank
+        expect(subject.errors[:name]).to be_blank
       end
     end 
 
@@ -44,7 +46,7 @@ describe Product do
 
       it 'should give the correct average' do
         # fire
-        result = @product.average_rating
+        result = subject.average_rating
 
         # check that the test gives the result that we want
         expect(result).to eq(3)
