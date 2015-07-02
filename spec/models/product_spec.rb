@@ -19,15 +19,15 @@ describe Product do
     context 'when is present' do 
       before do 
         @product = build(:product)
-        expect(subject.name).to be_present
+        expect(@product.name).to be_present
       end
 
       it 'should be valid with a name' do
         # fire
-        subject.valid?
+        @product.valid?
 
         # check that the test gives the result that we want
-        expect(subject.errors[:name]).to be_blank
+        expect(@product.errors[:name]).to be_blank
       end
     end 
 

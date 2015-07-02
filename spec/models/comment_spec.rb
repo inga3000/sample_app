@@ -77,7 +77,7 @@ describe Comment do
 
 			it 'should be invalid' do
         # fire
-        subject.valid?
+        @comment.valid?
 
         # check that the test gives the result that we want
 				expect(@comment.errors[:rating]).to include("is not a number")
