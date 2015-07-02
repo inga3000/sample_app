@@ -4,7 +4,7 @@ describe UsersController, :type => :controller do
   
   describe "GET #index" do
     before do
-      @user = User.create(:email => 'inga@abc.com', :password => 'Qwerty1234')
+      @user = create(:user)
       sign_in @user 
     end
     
@@ -25,7 +25,7 @@ describe UsersController, :type => :controller do
     end
 
     it "renders the show user template" do
-      get :show, id: @user.id
+      get :show, id: @user.id # something is wrong here
       expect(response).to render_template("show")
     end
 

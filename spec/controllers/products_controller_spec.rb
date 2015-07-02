@@ -20,7 +20,7 @@ describe ProductsController, :type => :controller do
 describe 'GET #show' do
 
 	before do
-		@product = Product.create(:name => "iPhone")    
+		@product = create(:product)  
 	end
 
 		it "responds successfully with an HTTP 200 status code" do

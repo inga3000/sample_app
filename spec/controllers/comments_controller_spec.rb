@@ -2,20 +2,26 @@ require 'rails_helper'
 
 describe CommentsController, :type => :controller do 
 
-	describe 'POST #create' do
+	describe '#create' do
 
-		before do
-      @user = User.new email: 'mary@mailinator.com', password: '12345678aA'
-			@product = Product.create(:name => "iPhone")   
-			@comment = Comment.new(body: "comment 1", user: @user, rating: 2)
-			@product.comments << comment
- 
-		end
-		
-		it "should redirect to product page" do
-			post :create, id:@comment.id, product_id: @product
-			expect(response).to redirect_to(@product)
-		end
+    context 'given a user and a product' do
+			before do
+				@user = create(:user)
+				@product = create(:product)
+			end
+
+			it "creates new comment attached to product" do
+        expect do
+          expect do
+						# fire
+						post :create, comment: {user_id: @user.id, body: "comment 1", rating: 2}, product_id: @product.id
+          end.to change { @product.reload.comments.count }.by(1)
+        end.to change { Comment.count }.by(1)
+
+				# check result
+				expect(response).to redirect_to(@product)
+			end
+    end
 	end
 
 end
