@@ -18,9 +18,7 @@ describe Product do
 
     context 'when is present' do 
       before do 
-
-        subject.name = "Apple iPhone 6"
-
+        @product = build(:product)
         expect(subject.name).to be_present
       end
 
@@ -46,7 +44,7 @@ describe Product do
 
       it 'should give the correct average' do
         # fire
-        result = subject.average_rating
+        result = @product.average_rating
 
         # check that the test gives the result that we want
         expect(result).to eq(3)

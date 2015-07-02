@@ -6,10 +6,8 @@ describe CommentsController, :type => :controller do
 
     context 'given a user and a product' do
 			before do
-				@user = User.new email: 'mary@mailinator.com', password: '12345678aA'
-				@user.save!
-
-				@product = Product.create!(:name => "iPhone")
+				@user = create(:user)
+				@product = create(:product)
 			end
 
 			it "creates new comment attached to product" do
