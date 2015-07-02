@@ -38,6 +38,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development do
   gem 'mailcatcher'
+  
+  gem 'guard'
+  
+  gem 'guard-rspec', require: false
+  
+  gem "spork-rails"
+  
+  gem 'rspec-rails', '~> 3.0'
+
 end  
 
 group :development, :test do
@@ -54,8 +63,6 @@ group :development, :test do
   gem 'sqlite3'
 
   gem 'quiet_assets'
-
-  gem 'rspec-rails', '~> 3.0'
 
   gem "factory_girl_rails", "~> 4.0"
 
