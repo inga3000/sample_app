@@ -38,8 +38,10 @@ describe Product do
       before do
         # test setup. I am preparing the context of the actual test
         user = create(:user)
-        @product = create(:product_with_comments)
-        # @product.comments << Comment.new(5.times { FactoryGirl.build(:comment, user)}) 
+        @product = create(:product)
+        5.times do  
+          @product.comments << build(:comment, user: user)
+        end
       end  
 
       it 'should give the correct average' do
@@ -47,7 +49,7 @@ describe Product do
         result = @product.average_rating
 
         # check that the test gives the result that we want
-        expect(result).to eq(3)
+        expect(result).to eq(4)
 
         # ALTERNATIVE: fire test and check result at the same time. This is an alternative which is usually used:
         #

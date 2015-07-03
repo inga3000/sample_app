@@ -36,18 +36,16 @@ require "rails_helper"
 
 			context 'when password confirmation does not match' do
 				before do
-					subject.email = "foo@mailinator.com"
-					subject.password ="CareerFoundry1"
-					subject.password_confirmation = "CareerFoundry2"
+					@user = build(:user, email: "foo@mailinator.com", password: "CareerFoundry1", password_confirmation: "CareerFoundry2")
 
-          expect(subject.password).to_not eq(subject.password_confirmation)
+          expect(@user.password).to_not eq(@user.password_confirmation)
 				end
 
 				it 'should not be valid ' do
           # fire
           expect do
             begin
-              subject.save!
+              @user.save!
             rescue Exception => ex
               expect(ex.message).to include("Validation failed: Password confirmation doesn't match Password")
               raise

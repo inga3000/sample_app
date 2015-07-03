@@ -32,18 +32,6 @@ FactoryGirl.define do
     description "It is blue."
     image_url "board2.jpg"
     colour "blue"
-
-#      factory :product_with_comments do
-#        transient do
-#          comments_count 5
-#        end
-#     end
-#
-#      after(:create) do |product, evaluator| #did not fully understand idea of evaluators 
-#        create_list(:comment, evaluator.comments_count, product: product)
-#      end
-
   end
-
 
 end
