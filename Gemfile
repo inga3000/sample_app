@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem 'stripe'
+
+
 gem 'cancancan', '~> 1.10'
 
 ## Gemfile for Rails 3+, Sinatra, and Merb
@@ -65,6 +68,8 @@ group :development, :test do
   gem 'quiet_assets'
 
   gem "factory_girl_rails", "~> 4.0"
+
+
 
 
 end
