@@ -1,10 +1,14 @@
 class OrdersController < ApplicationController
+before_action :set_order, only: [:show, :edit, :update, :destroy]
+#before_filter :authenticate_user!
+load_and_authorize_resource
 
   def index
-  	redirect_to products_url
+  	@order = Order.all
   end
 
   def show
+  	@order = Order.find(params[:id])
   end
 
   def new

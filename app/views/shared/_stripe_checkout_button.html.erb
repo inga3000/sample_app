@@ -1,9 +1,10 @@
-<form action=" " method="POST">
+<form action="/charge" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-amount="<%= @product.price %>"
+    data-amount="<%= @product.price*100 %>"
     data-name="<%= @product.name %>"
+    data-currency="EUR"
     data-description="<%= @product.description %>"
     data-image="<%= @product.image_url %>">
   </script>
