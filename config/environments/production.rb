@@ -88,4 +88,5 @@ Rails.application.configure do
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
    }
+   config.action_mailer.default_url_options = { :host => 'latesunday.herokuapp.com', :protocol => 'http', :only_path => false }
 end
