@@ -1,10 +1,12 @@
-<div class="container order">
-
 <h2>Order Summary</h2>
+
+<div class="container order">
 
  <div class="order_thank_you">
   Congratulations! You ordered this great <%= @order.product.name %> for <%= currency(@order.total / 100)%>. 
-  <p> A confirmation email has been sent.</p> 
+  <br>
+  <br>
+  A confirmation email has been sent.
 </div>
 <br>
 <img class="order_image" src="<%= @order.product.image_url %>">

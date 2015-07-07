@@ -10,7 +10,7 @@ gem 'cancancan', '~> 1.10'
 gem 'will_paginate', '~> 3.0.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -44,6 +44,8 @@ group :development do
   gem 'guard'
   
   gem 'guard-rspec', require: false
+
+  gem 'brakeman', :require => false
   
   gem "spork-rails"
   
@@ -67,8 +69,6 @@ group :development, :test do
   gem 'quiet_assets'
 
   gem "factory_girl_rails", "~> 4.0"
-
-
 
 
 end
