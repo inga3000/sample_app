@@ -17,4 +17,9 @@ class UserMailer < ActionMailer::Base
     mail(to: email, subject: "We have received your message")
   end 
 
+  def send_order_confirmation(email, order, product)
+    @email = email
+    @product = product
+    mail(to: @email, subject: "Order Confirmation from 'It's a Store'")
+  end  
 end

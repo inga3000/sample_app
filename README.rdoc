@@ -66,3 +66,5 @@ rake db:migrate:status
 
 rake routes (list all routes)
 
+Mailcatcher: http://localhost:1080/ (Terminal: "mailcatcher")
+
