@@ -6,25 +6,17 @@
 
 <div class="container">
 
-<table>
+  <div class="row">
 
-  <thead>
-    <tr>
-      <th> </th>
-      <th>Description</th>
-      <th>Price (in €)</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <% @products.each do |product| %>
+        
+        <%= render product %>
+  
+      <% end %>
+    
 
-  <tbody>
-    <% @products.each do |product| %>
-      
-      <%= render product %>
-    <% end %>
-  </tbody>
-</table>
-
+  </div>
+  
 <br>
 
 <%= link_to 'New Product', new_product_path %>

@@ -1,11 +1,12 @@
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700' rel='stylesheet' type='text/css'>
+<div class="product-show col-md-4 text-center">
+  <%= link_to product_path(product) do %>
+    
+    <div>
+      <%= image_tag product.image_url, alt: product.name, height: "350" %>
+    </div>
+    <h4><%= product.name %></h4>
+    <h5><%= number_to_currency(product.price) %></h5> 
+  <% end %>  
+</div>
 
-    <tr>
-        <td><img src="<%= product.image_url %>" class="img-responsive"></td>
-        <td><%= product.description %></td>
-        <p><%= number_to_currency(product.price,:unit=>'€') %></p>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
 
