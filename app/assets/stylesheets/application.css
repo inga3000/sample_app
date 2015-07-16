@@ -16,3 +16,8 @@
 .navbar .navbar-toggle .icon-bar {
     background-color: red;
 }
+
+
+* { 
+  font-family: Roboto Condensed, sans-serif;
+}
