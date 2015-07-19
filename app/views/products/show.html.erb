@@ -5,7 +5,9 @@
 
 <p>
 
-<%= link_to image_tag(@product.image_url), class: 'fancybox' %> 
+<%= link_to image_url(@product.image_url), class: 'fancybox' do %>
+  <%= image_tag @product.image_url, width: "200" %>
+<% end %>
 
 </p>
 
