@@ -33,7 +33,7 @@
 
 <br>
 <p>
-  <%= form_tag "/payments/create" do %>
+  <%= form_tag("/payments/create", remote: true) do %>
     <%= hidden_field_tag :product_id, @product.id %> 
     <%= render partial: "shared/stripe_checkout_button" %>
   <% end %>
