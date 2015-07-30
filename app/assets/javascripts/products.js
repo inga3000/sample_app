@@ -23,5 +23,13 @@ $(document).ready(function(){
 
 	});
 
+  // attach ajax handling for product comment deletion
+
+  $('a.delete-product-comment').on('ajax:success', function(){
+     console.log('Ajax success on comment deletion');
+
+     $(this).parents('.comment-container').remove();
+  });
+
 });
 
