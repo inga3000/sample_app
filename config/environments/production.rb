@@ -1,6 +1,16 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2
+                    }
+
+                    
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -89,4 +99,5 @@ Rails.application.configure do
     :enable_starttls_auto => true
    }
    config.action_mailer.default_url_options = { :host => 'latesunday.herokuapp.com', :protocol => 'http', :only_path => false }
+
 end

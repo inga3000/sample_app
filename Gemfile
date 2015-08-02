@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem 'dalli'
+
 gem "paperclip", "~> 3.1"
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
