@@ -5,9 +5,7 @@
 
 <p>
 
-<%= link_to image_url(@product.image_url), class: 'fancybox' do %>
-  <%= image_tag @product.image_url, width: "300" %>
-<% end %>
+<%= image_tag @product.photo.url %>
 
 </p>
 
@@ -60,6 +58,7 @@
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %>
+<%= link_to 'Delete', product_path(@product), method: :delete, data: { confirm: "Are you sure?" } %>
 <%= link_to 'Back', url_for(:back) %>
 
 </div>

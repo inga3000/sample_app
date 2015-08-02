@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem "paperclip", "~> 3.1"
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'cancancan', '~> 1.10'

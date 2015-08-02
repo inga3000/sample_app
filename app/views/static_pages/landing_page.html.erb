@@ -18,7 +18,7 @@
   <div class="carousel-inner" role="listbox">
     <% @products.each do |product| %>
   <div class="item<%= " active" if product == @products.first %>" >
-      <%= link_to image_tag(product.image_url, :alt => product.name), {:controller => 'products', :action => 'show', id:product} %> 
+  <%= link_to image_tag(product.photo.url), {:controller => 'products', :action => 'show', id:product} %> 
     </div>
    <% end %>
   </div>
@@ -37,6 +37,3 @@
 </div>
 
 </div>
-
-
-

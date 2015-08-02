@@ -2,10 +2,10 @@
   <%= link_to product_path(product) do %>
     
     <div>
-      <%= image_tag product.image_url, alt: product.name, height: "350" %>
+    <%= image_tag product.photo.url, width: "350" %>
     </div>
     <h4><%= product.name %></h4>
-    <h5><%= number_to_currency(product.price) %></h5> 
+    <h5><%= number_to_currency(product.price, :unit => "€") %></h5> 
   <% end %>  
 </div>
 

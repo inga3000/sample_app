@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618185125) do
+ActiveRecord::Schema.define(version: 20150731201840) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20150618185125) do
 
   add_index "comments", ["product_id"], name: "index_comments_on_product_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "first_names", force: :cascade do |t|
+    t.string   "last_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
@@ -38,10 +44,14 @@ ActiveRecord::Schema.define(version: 20150618185125) do
     t.string   "name"
     t.text     "description"
     t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "colour"
     t.integer  "price"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
