@@ -4,7 +4,7 @@ gem 'devise'
 
 gem 'dalli'
 
-gem "paperclip", "~> 3.1"
+gem "paperclip", "~> 4.3"
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
