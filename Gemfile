@@ -6,6 +6,8 @@ gem 'dalli'
 
 gem "paperclip"
 
+gem 'redis-rails'
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem 'cancancan', '~> 1.10'
