@@ -1,8 +1,7 @@
 if Rails.env.development? || Rails.env.test?
   $redis = Redis.new(:host => 'localhost', :port => 6379)
-elsif Rails.env.production?
-  $redis = Redis.new(host: 'pub-redis-11935.us-east-1-3.6.ec2.redislabs.com',
-  	                 port: 11935)	
+elsif Rails.env.production?  
+  if ENV["REDISCLOUD_URL"]
+    $redis = Redis.new(:url => ENV["REDISCLOUD_URL"])
+  end
 end  
-
-#redis://rediscloud:obufgVlN5oRHD8p1@pub-redis-11935.us-east-1-3.6.ec2.redislabs.com:11935
