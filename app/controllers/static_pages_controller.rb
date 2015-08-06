@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  helper_method :landing_page_counter
+
   def index
   end
 
@@ -29,5 +31,14 @@ class StaticPagesController < ApplicationController
 	#  	:subject => "A new contact form message from #{@name}", 
 	#  	:body => @message).deliver
   end
+
+  private
+
+  def landing_page_counter 
+    counter = $redis.incr("page_counter") 
+    $redis.bgsave 
+    counter
+  rescue 
+  end  
 
 end
