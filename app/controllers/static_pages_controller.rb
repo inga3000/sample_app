@@ -36,9 +36,11 @@ class StaticPagesController < ApplicationController
 
   def landing_page_counter 
     counter = $redis.incr("page_counter") 
+    return counter if Rails.env.production?
     $redis.bgsave 
     counter
-  rescue 
+  rescue Exception => ex
+    Rails.logger.error "ERROR sending data to Redis: ex: #{ex.inspect}"
   end  
 
 end
