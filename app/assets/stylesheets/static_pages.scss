@@ -38,10 +38,11 @@ h2 {
   color: black;
 }
 
-#row {
+#shop-window {
   margin-top: 20px;
   height: 550px;
   border: solid red;
+  margin-bottom: 100px;
 }
 
 #carousel-example-generic {
@@ -76,4 +77,10 @@ h2 {
   text-align: center;
   font-family: Roboto Condensed, Impact, sans-serif;
   font-weight: 400;
+}
+
+#page-counter { 
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
 }

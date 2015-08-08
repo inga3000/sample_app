@@ -22,22 +22,18 @@
     <div class="container-fluid carousel">
 
       <div class="navbar-header">
-
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         </button>
+      </div>
 
-          <div class="navbar-collapse collapse">
-
-            <ul class="nav navbar-nav navbar-left">
-
-              <li class="navbar-nav">
-
-              <%= link_to "Home", root_path %> 
-
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li class="navbar-nav">
+            <%= link_to "Home", root_path %> 
               <% if user_signed_in? %>
                 <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
                 <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
@@ -45,27 +41,24 @@
                 <li>
                 <%= link_to('Login', new_user_session_path)  %>  
                 </li>
-              <% end %>
+            <% end %>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li> <%= link_to "Products", products_path %></li>
+          <li> <%= link_to "Shopping Card", orders_path %></li>
+          <li> <%= link_to "Contact", static_pages_contact_path %></li>
+        </ul>
+        <ul class="navbar-form navbar-right">
+          <%= form_tag("/products", method: "get") do %>
+          <%= text_field_tag  (:q) %>
+          <% end %>
+        </ul>
+      </div> <!-- end navbar-collapse-->
 
-            </ul>
+  </div> <!-- end nav container-flu -->
 
-            <ul class="nav navbar-nav navbar-right">
+</nav>
 
-              <li> <%= link_to "Products", products_path %></li>
-              <li> <%= link_to "Shopping Card", orders_path %></li>
-              <li> <%= link_to "Contact", static_pages_contact_path %></li>
-
-            <ul class="navbar-form navbar-right">
-                <%= form_tag("/products", method: "get") do %>
-                <%= text_field_tag  (:q) %>
-                <% end %>
-            </ul>
-
-          </div> <!-- end navbar-collapse-->
-
-      </div> <!-- end navbar header -->
-
-    </div> <!-- end nav container -->
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
@@ -75,3 +68,4 @@
 </body>
 
 </html>
+

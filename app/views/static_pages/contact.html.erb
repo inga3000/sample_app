@@ -1,4 +1,8 @@
-<h2> What can we do for you {{yourName}}? &#9786 </h2>
+<div id="page-counter">
+<h5>Did you know? This page has already been seen <%= landing_page_counter %> times. </h5>
+</div>
+
+<h2> So what can we do for you {{yourName}}? </h2>
 
 <div class="container form">
 
@@ -15,8 +19,7 @@
       <%= label_tag :email, "Email Adress" %>
       <%= text_field_tag :email, nil, class: "form-control", placeholder: "Your Email" %>
     </div>
-    <div class="form-group">
-      <%= label_tag :message, "Message" %>
+    <div class="form-group">^?      <%= label_tag :message, "Message" %>
       <%= text_area_tag :message, nil, class: "form-control", placeholder: "Space for your Message" %>
     </div>
     <%= submit_tag "Send" %>
@@ -25,3 +28,4 @@
 </div>
 
 </div>
+
